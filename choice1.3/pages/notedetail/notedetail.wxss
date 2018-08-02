@@ -1,0 +1,26 @@
+/* pages/notedetail/notedetail.wxss */
+page{
+    background: #fff;
+}
+.page-head{
+    padding: 20rpx 30rpx 40rpx;color: #343434;font-size: 60rpx;background: #F5F6F8;
+}
+.page-main{
+    padding: 40rpx 30rpx 0 30rpx;background: #fff;
+}
+.user-info-box{display: flex;}
+.uavatar{
+    width: 72rpx;height: 72rpx;border-radius: 50%;border: 4rpx solid #efefef;
+    margin-right: 20rpx;
+}
+.u-cont{
+    font-size: 28rpx;color: #343434;
+}
+.time-text{
+    font-size: 24rpx;color: #888;
+}
+.note-content{
+    color: #666;font-size: 28rpx;line-height: 48rpx;
+    padding: 30rpx 34rpx 40rpx;background: rgba(87, 107, 149, 0.13);margin-top: 30rpx;
+}
+.red-font{color: #E74C49;}

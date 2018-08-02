@@ -1,0 +1,118 @@
+<!--index.wxml-->
+<!-- <import src="../../components/tabBar/tabBar.wxml"/> -->
+<import src="../../components/we-cropper/we-cropper.wxml"/>
+<view wx:if="{{hasUserInfo}}" class="{{pagePad?'index-tab-head index-tab-head-sm':'index-tab-head'}}">
+    <view class="tab-item-box">
+        <view class="{{txtActive?'tab-item tab-item-active':'tab-item'}}" data-tab="text" bindtouchend="changeTab"><image src="{{txtActive?'../../images/text_icon.png':'../../images/text_act_icon.png'}}" class="tab-item-img"></image></view>
+        <view class="{{!txtActive?'tab-item tab-item-active':'tab-item'}}" data-tab="image" bindtouchend="changeTab"><image src="{{!txtActive?'../../images/img_icon.png':'../../images/img_act_icon.png'}}" class="tab-item-img"></image></view>
+    </view>
+</view>
+<view wx:if="{{hasUserInfo}}">
+    <view hidden="{{!showTitleNum}}" class="idx-text-num">
+        <text>{{hadTitleNum}}</text>/<text>60</text>
+    </view>
+    <view wx:if="{{!showCropper}}" class="{{pagePad?'title-box title-box-sm':'title-box'}}">
+        
+        <textarea class="{{showTextarea?'text-val textarea-has-text':'text-val'}}" data-direct="title" bindfocus="textFocus" bindblur="textBlur" bindinput="titlePut" value="{{titleText}}" bindtouchstart="textTap" />
+        
+        </view>
+    <view hidden="{{!txtActive}}">
+        <view class="pub-cont">
+            <view class="pub-cont-box" data-txt="left" bindtouchend="textFocus">
+                <view hidden="{{!showLeftNum}}" class="idx-text-num">
+                    <text>{{leftHadWrite}}</text>/<text>36</text>
+                </view>
+                <textarea adjust-position="{{adjustPosi}}" cursor-spacing="{{spacing}}" class="{{showLeft?'text-val bd-right textarea-has-text':'text-val bd-right'}}" data-direct="left" bindfocus="contFocus" bindinput="titlePut" bindblur="textBlur" value="{{leftHolder}}" bindtouchstart="textTap" />
+            </view>
+            <view class="pub-cont-box" data-txt="right" bindtouchend="textFocus">
+                <view hidden="{{!showRightNum}}" class="idx-text-num">
+                    <text>{{rightHadWrite}}</text>/<text>36</text>
+                </view>
+                <textarea adjust-position="{{adjustPosi}}" cursor-spacing="{{spacing}}" class="{{showRight?'text-val textarea-has-text':'text-val'}}" data-direct="right" bindfocus="contFocus" bindinput="titlePut" bindblur="textBlur" value="{{rightHolder}}" bindtouchstart="textTap" />
+            </view>
+        </view>
+    </view>
+    <view hidden="{{txtActive}}">
+        <view class="pub-cont">
+            <view class="pub-cont-box pub-img-box img-border-right" data-imgopt="left" bindtap="chooseImg">
+                <view class="default-img-box" wx:if="{{!leftImgTemp}}">
+                    <image src="../../images/upload_icon.png" class="default-img" />
+                    <view class="default-imgtext">点击上传图片</view>
+                </view>
+                <image mode="aspectFill" wx:if="{{leftImgTemp}}" class="upload-image" src="{{leftImgTemp}}" />
+                <image wx:if="{{showLeftDele}}" src="../../images/dele_img_icon.png" data-opt="left" class="deleImg" catchtap="deleImage" />
+            </view>
+            <view class="pub-cont-box pub-img-box" data-imgopt="right" bindtap="chooseImg">
+                <view wx:if="{{!rightImgTemp}}" class="default-img-box">
+                    <image src="../../images/upload_icon.png" class="default-img" />
+                    <view class="default-imgtext">点击上传图片</view>
+                </view>
+                <image mode="aspectFill" wx:if="{{rightImgTemp}}" class="upload-image" src="{{rightImgTemp}}" />
+                <image wx:if="{{showRightDele}}" src="../../images/dele_img_icon.png" data-opt="right" class="deleImg" catchtap="deleImage" />
+            </view>
+        </view>
+    </view>
+    <button wx:if="{{!showClickBtn}}" class="{{isPublish?'publish-btn publish-btn-active':'publish-btn'}}" disabled="{{btnDis}}" bindtap="goPublish">发布</button>
+    <button wx:if="{{showClickBtn}}" class="publish-btn click-btn">发布</button>
+
+</view>
+<!-- 加积分提示 -->
+<view class="gc-toast" wx:if="{{showToast}}">
+    <view class="toast-cont">
+        <image src="../../images/gold_coin.png" class="smile-icon" />
+        <image src="../../images/score.png" class="score-icon" />
+    </view>
+    <view class="toast-info">发布成功</view>
+</view>
+
+<!-- 分享弹窗 -->
+<view class="share-mask" style="height: {{winHeight}}px;}}" wx:if="{{isShare}}">
+    <view class="{{isToastCancle?'toast-cancle':'share-toast'}}">
+        <view class="share-toast-head">
+            <image class="share-close" src="../../images/close.png" bindtap="cancelShare"/>
+        </view>
+        <view class="share-infos">好友助攻 迎刃而解</view>
+        <view class="share-content">
+            <view>{{shareTitle}}</view>
+            <view class="triangle-down"></view>
+        </view>
+        <view class="share-btn-box">
+            <image src="../../images/moment_icon.png" class="share-btn" catchtap="shareTomoment" />
+            <view class="btn-splie-line"></view>
+            <button class="share-btn-default" open-type="share" catchtap="shareToFriend">
+                <image src="../../images/wechat_icon.png" class="share-btn"/>
+            </button>
+            
+        </view>
+    </view>
+</view>
+
+<!-- 裁剪 -->
+  
+<view class="cropper-wrapper" wx:if="{{showCropper}}" style="height:{{viewHeight}}px;">
+    <template is="we-cropper" data="{{...cropperData.cropperOpt}}"/>
+    <view class="cropper-buttons">
+        <view class="upload select-again-btn" bindtouchstart="uploadTap">
+            重选
+        </view>
+        <view class="getCropperImage" bindtouchstart="getCropperImage">
+            确定
+        </view>
+    </view>
+</view>
+
+<!--自定义toast-->
+<view class="we-container">
+    <view class="{{andrToastTop?'wxapp-toast-content-box toast-top':'wxapp-toast-content-box'}}" wx:if="{{isWeToast}}">
+        <view class="wxapp-toast-content">
+            <view class="wxapp-toast-content-text">
+                {{toastText}}
+            </view>
+        </view>
+    </view>
+    <!--wxapp-toast end-->
+</view>
+
+
+<!-- 授权弹窗 -->
+<dialog-wxml dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog" open-type="{{openType}}" auth-info="{{authInfo}}"></dialog-wxml>

@@ -1,0 +1,102 @@
+<!--pages/mine/mine.wxml-->
+<import src="../../components/tabBar/tabBar.wxml"/>
+<view class="{{isIphone?'is-iphone':''}}">
+    <view class="mine-head">
+        <view class="mine-banner">
+            <view class="nums-box">
+                <image src="../../images/grey_gold.png" class="gold-coin" />
+                <view class="point-box">{{points || 0}}</view>
+            </view>
+            <image class="my-avatar" src="{{userInfo.avatarUrl || '../../images/avatarDefault.png'}}" />
+            <image src="../../images/my_bg2.png" class="my-bg"/>
+        </view>
+    </view>
+    <view class="mine-infos">
+        <view class="my-name">{{userInfo.nickName || ''}}</view>
+        <image wx:if="{{userInfo.gender===1}}" src="../../images/boy_icon.png" class="my-gender"/>
+        <image wx:if="{{userInfo.gender===2}}" src="../../images/girl_icon.png" class="my-gender"/>
+        <view class="msg-box" bindtap="gotoMsg">
+            消息
+            <view class="msg-red-dot" wx:if="{{msgCount*1>0 || voteUnreadCount*1>0 || baseRedDot*1>0 || commentTotal*1>0}}"></view>
+        </view>
+    </view>
+    <view class="tab-container">
+        <view class="{{showSrollView?'tab-head tab-head-fixed':'tab-head'}}" wx:if="{{userInfo.nickName}}">
+            <view class="{{isMine?'tab-head-item my-publish-item blue-font':'tab-head-item my-publish-item'}}" data-type="mine"  bindtouchstart="voteOthers">
+                <view>发起<text hidden="{{!myTotalCount}}">({{myTotalCount}})</text></view>
+                <view class="{{isMine?'bottom-line blue-line':'bottom-line'}}" hidden="{{!isMine}}"></view>
+            </view>
+            <view class="{{!isMine?'tab-head-item blue-font':'tab-head-item'}}" data-type="others"  bindtouchstart="voteOthers">
+                <view>参与<text hidden="{{!joinTotalCount}}">({{joinTotalCount}})</text></view>
+                <view class="{{!isMine?'bottom-line blue-line':'bottom-line'}}" hidden="{{isMine}}"></view>
+            </view>
+        </view>
+        <view class="tab-content" wx:if="{{userInfo.nickName}}">
+            <view hidden="{{!myPublish.length}}">
+                <view hidden="{{!isMine}}">
+                    <view class="tab-list-item" bindtap="gotoDetail" hover-class="list-hover" wx:for="{{myPublish}}" data-my="1" data-id="{{item.id}}" wx:key="index">
+                        <view class="item-title">{{item.question}}</view>
+                        <view class="item-datas">
+                            <view class="percent-cont-box">
+                                <text class="left-pg-text">{{item.choose1_per}}%</text>
+                                <view class="percent-box">
+                                    <view class="left-progress" wx:if="{{item.choose1_per===100}}" style="width:{{item.choose1_per}}%;"></view>
+                                    <view class="right-progress" wx:if="{{item.choose1_per===100}}" style="width:0%;"></view>
+                                    <view class="left-progress" wx:if="{{item.choose2_per===100}}" style="width:0%;"></view>
+                                    <view class="right-progress" wx:if="{{item.choose2_per===100}}" style="width:{{item.choose2_per}}%;"></view>
+                                    <view wx:if="{{item.choose1_per!==100 && item.choose2_per!==100}}" class="left-progress" style="width:{{item.choose1_per?item.choose1_per:50}}%;"></view>
+                                    <view wx:if="{{item.choose1_per!==100 && item.choose2_per!==100}}" class="right-progress" style="width:{{item.choose2_per?item.choose2_per:50}}%;"></view>
+                                </view>
+                                <text class="right-pg-text">{{item.choose2_per}}%</text>
+                            </view>
+                            <view class="hot-cont-box">
+                                <image src="../../images/hot_icon.png" class="hot-icon" />
+                                <view>{{item.hots}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nomore-text" wx:if="{{nomorePublish}}">选象，让选择简单一点</view>
+                </view>
+            </view>
+            <view hidden="{{!myJoin.length}}">
+                <view hidden="{{isMine}}">
+                    <view class="{{item.question.status===4?'tab-list-item delete-bg':'tab-list-item'}}" hover-class="list-hover"  data-id="{{item.question.id}}" data-stat="{{item.question.status}}" bindtap="gotoDetail" wx:for="{{myJoin}}" wx:key="index">
+                        <view class="item-title">{{item.question.question || '未知题目'}}</view>
+                        <view class="item-datas">
+                            <view class="percent-cont-box">
+                                <text class="left-pg-text">{{item.question.choose1_per}}%</text>
+                                <view class="percent-box">
+                                    <view class="left-progress" wx:if="{{item.question.choose1_per===100}}" style="width:{{item.question.choose1_per}}%;"></view>
+                                    <view class="right-progress" wx:if="{{item.question.choose1_per===100}}" style="width:0%;"></view>
+                                    <view class="left-progress" wx:if="{{item.question.choose2_per===100}}" style="width:0%;"></view>
+                                    <view class="right-progress" wx:if="{{item.question.choose2_per===100}}" style="width:{{item.question.choose2_per}}%;"></view>
+                                    <view wx:if="{{item.question.choose1_per!==100 && item.question.choose2_per!==100}}" class="left-progress" style="width:{{item.question.choose1_per?item.question.choose1_per:50}}%;"></view>
+                                    <view wx:if="{{item.question.choose1_per!==100 && item.question.choose2_per!==100}}" class="right-progress" style="width:{{item.question.choose2_per?item.question.choose2_per:50}}%;"></view>
+                                </view>
+                                <text class="right-pg-text">{{item.question.choose2_per}}%</text>
+                            </view>
+                            <view class="hot-cont-box">
+                                <image src="../../images/hot_icon.png" class="hot-icon" />
+                                <view>{{item.question.hots}}</view>
+                            </view>
+                        </view>
+                        <image wx:if="{{item.question.status===4}}" src="../../images/dele_tag.png" class="delete-icon"/>
+                    </view>
+                    <view class="nomore-text" wx:if="{{nomoreJoin}}">选象，让选择简单一点</view>
+                </view>
+            </view>
+
+            <view wx:if="{{myPublish.length===0 && isMine}}" class="tab-content-empty">
+                <empty-wxml empty-info="{{mineEmptyInfo}}" show-blue="{{showBlue}}"></empty-wxml>
+            </view>
+            <view wx:if="{{myJoin.length===0 && !isMine}}" class="tab-content-empty">
+                <empty-wxml blue-text="{{othersBlueText}}" empty-info="{{othersEmptyInfo}}" show-blue="{{showBlue}}"></empty-wxml>
+            </view>
+
+        </view>
+    </view>
+</view>
+
+<dialog-wxml dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>
+
+<template is="tabBar" data="{{tabBar:bindData.tabBar,msgCount,voteUnreadCount,baseRedDot,commentTotal}}"/>

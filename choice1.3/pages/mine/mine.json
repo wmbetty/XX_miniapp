@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#E2DCCE",
+    "backgroundColor": "#E2DCCE",
+    "usingComponents": {
+        "empty-wxml": "../../components/empty/empty",
+        "dialog-wxml": "../../components/dialog/dialog"
+    }
+}

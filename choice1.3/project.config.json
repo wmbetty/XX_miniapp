@@ -1,0 +1,123 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.8",
+	"appid": "wx9fec8c5f7b92b271",
+	"projectname": "GC1.3",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": -1,
+					"name": "主页",
+					"pathName": "pages/main/main",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "msg",
+					"pathName": "pages/messages/messages",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "vote",
+					"pathName": "pages/votemsg/votemsg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/details/details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "feed",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ndetail",
+					"pathName": "pages/notedetail/notedetail",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "other",
+					"pathName": "pages/others/others",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mtest",
+					"pathName": "pages/mtest/mtest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "input",
+					"pathName": "pages/input/input",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "poster",
+					"pathName": "pages/saveposter/saveposter"
+				}
+			]
+		}
+	}
+}

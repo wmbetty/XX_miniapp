@@ -1,0 +1,29 @@
+<!--pages/votemsg/votemsg.wxml-->
+<view class="page-head">投票</view>
+<view class="vote-list-group" wx:if="{{voteLists.length>0}}">
+    <view wx:for="{{voteLists}}" wx:key="{{index}}" class="{{item.question.status===4?'vote-list-item delete-bg':'vote-list-item'}}" data-qid="{{item.question.id}}" data-stat="{{item.question.status}}" catchtap="gotoDetail">
+        <view class="list-head">
+            <image src="{{item.frommember.avatar || '../../images/avatarDefault.png'}}" class="voter-avatar" data-fromid="{{item.fromid}}" catchtap="gotoOthers"/>
+            <view>
+                <view data-fromid="{{item.fromid}}" catchtap="gotoOthers">{{item.frommember.nickname || '无名氏'}}</view>
+                <view class="time-text">{{item.created_time}}</view>
+            </view>
+        </view>
+        <view class="flex-space voted-title">
+            <view>{{item.question.question}}</view>
+            <view wx:if="{{item.status===0}}" class="s-circle"></view>
+        </view>
+        <view class="flex-space">
+            <view class="{{item.choose===1?'green-font':'dark-red-font'}}">投了【{{item.choose===1?'左':'右'}}边】一票</view>
+            <view class="vote-hot-box">
+                <image src="../../images/hot_icon.png" class="hot-icon" />
+                <view>{{item.question.hots}}</view>
+            </view>
+        </view>
+        <image wx:if="{{item.question.status===4}}" src="../../images/dele_tag.png" class="delete-icon"/>
+    </view>
+    <view class="nomore-text" wx:if="{{nomoreList}}">— 选象 让选择简单点 —</view>
+</view>
+<view wx:if="{{noDatas}}" class="empty-container">
+    <empty-wxml empty-info="暂时没有投票消息哦"></empty-wxml>
+</view>

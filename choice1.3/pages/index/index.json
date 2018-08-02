@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "有选象 不纠结",
+    "usingComponents": {
+        "dialog-wxml": "../../components/dialog/dialog"
+    }
+}

@@ -1,0 +1,6 @@
+<!--components/empty/empty.wxml-->
+<view>
+    <image src="../../images/empty_img.png" class="empty-img" />
+    <view class="empty-text">{{emptyInfo}}</view>
+    <view class="blue-font" wx:if="{{showBlue}}">{{blueText}}</view>
+</view>

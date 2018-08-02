@@ -1,0 +1,42 @@
+/* pages/votemsg/votemsg.wxss */
+page{
+    background: #F5F6F8;
+}
+.page-head{
+    padding: 20rpx 30rpx 40rpx;color: #343434;font-size: 60rpx;background: #F5F6F8;
+}
+.vote-list-group{
+    font-size: 28rpx;color: #343434;
+}
+.vote-list-item{padding: 44rpx 40rpx 40rpx 30rpx;margin-bottom: 16rpx;background: #fff;}
+.list-head{
+    display: flex;margin-bottom: 20rpx;
+}
+.voter-avatar{
+    width: 72rpx;height: 72rpx;border-radius: 50%;margin-right: 20rpx;
+    /* background: #000; */
+}
+.time-text{color: #888;font-size: 24rpx;}
+.flex-space{
+    display: flex;justify-content: space-between;position: relative;
+}
+.s-circle{
+    width: 16rpx;height: 16rpx;background: #FF4901;border-radius: 50%;
+    position: absolute;right: 0;bottom: 40rpx;
+}
+.voted-title{margin-bottom: 12rpx;}
+.green-font{color: #11B591;}
+.dark-red-font{color: #62559D;}
+.vote-hot-box{
+    display: flex;margin-top: 6rpx;
+}
+.hot-icon{
+    width: 26rpx;height: 28rpx;margin-right: 12rpx;margin-top: 4rpx;
+}
+.delete-bg{background: #E5E7ED;position: relative;}
+.delete-icon{
+    position: absolute;right: 0;top: 0;
+    width: 68rpx;height: 68rpx;
+}
+.empty-container{padding-top: 70rpx;}
+.nomore-text{color: #c7c7c7;font-size: 24rpx;text-align: center;padding: 20rpx 0;}

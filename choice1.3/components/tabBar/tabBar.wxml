@@ -1,0 +1,19 @@
+<!--components/tabBar/tabBar.wxml-->
+<template name="tabBar">
+    <view class="tabBar">
+    <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
+        <view class="tabBar-item">
+            <navigator open-type="redirect" url="{{item.pagePath}}" wx:if="{{index*1 !== 1}}">
+                <view class="{{index*1===2?'my-msg-box':''}}">
+                    <image class="icon" src='{{item.iconPath}}' />
+                    <view wx:if="{{index*1===2 && (msgCount*1>0 || voteUnreadCount*1>0 || baseRedDot*1>0 || commentTotal*1>0)}}" class="my-msg-red-dot"></view>
+                </view>
+                <view class="{{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}</view>
+            </navigator>
+            <navigator open-type="navigate" url="{{item.pagePath}}" wx:if="{{index*1 === 1}}">
+                <image bindtap="goPublish" class="icon" src='{{item.iconPath}}'></image>
+            </navigator> 
+        </view>
+    </block>
+    </view>
+</template>

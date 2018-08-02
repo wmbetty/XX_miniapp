@@ -1,0 +1,43 @@
+/* components/tabBar/tabBar.wxss */
+.icon{
+    width:42rpx;
+    height: 42rpx;
+  }
+  .tabBar{
+    width:100%;
+    position: fixed;
+    z-index: 10;
+    /* float: left; */
+    bottom:0;
+    padding:10rpx;
+    margin-left:-4rpx;
+      display: flex;justify-content: space-between;
+    background:#343434;font-size:20rpx;color:#888;
+    box-shadow: 16rpx 16rpx 16rpx 16rpx rgba(0,0,0,0.7);
+  }
+  
+   .tabBar-item{
+    float:left;
+    width:33.3%;
+    text-align: center;
+    overflow: hidden;
+  }
+  .tabBar-item:nth-child(2){
+      display: flex;justify-content: center;align-items: center;
+  }
+  .tabBar-item:nth-child(2) image{
+      /*width: 112rpx;height: 60rpx;margin-top: 12rpx;*/
+      width: 122rpx;height: 112rpx;
+      position:absolute;left:50%;margin-left:-68rpx;bottom:18rpx;
+  }
+  /*当前字体颜色*/
+  .tabBartext{
+    color:#E74C49;
+  }
+  .my-msg-box{
+    position: relative;
+  }
+  .my-msg-red-dot{
+    position: absolute;top:0;right: 100rpx;
+    width: 20rpx;height: 20rpx;border-radius: 50%;background: #E74C49;
+  }

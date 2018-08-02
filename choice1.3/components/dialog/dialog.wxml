@@ -1,0 +1,10 @@
+<!--components/dialog/dialog.wxml-->
+<view class="user-dialog-mask" wx:if="{{dialogShow}}">
+    <view class="user-dialog-content">
+        <view class="user-dialog-title">{{authInfo}}</view>
+        <view class="user-dialog-foot">
+            <view class="user-dialog-btn" catchtap="cancelDialog">取消</view>
+            <button class="user-dialog-btn user-dialog-confirm" open-type="{{openType}}" bindtap="confirmDialog">查看</button>
+        </view>
+    </view>
+</view>
