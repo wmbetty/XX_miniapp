@@ -705,7 +705,7 @@ Page({
                 qid: res.data.data.id
               };
               Api.wxRequest(shareApi,'POST',postData,(res)=>{
-                console.log(res.data.data.url,'friends');
+                // console.log(res.data.data.url,'friends');
                 if (res.data.status*1===201) {
                   that.setData({shareFriImg:res.data.data.url})
                 }
