@@ -1,8 +1,1 @@
-/* components/empty/empty.wxss */
-.empty-img{
-    width: 224rpx;height: 224rpx;margin: 0 auto 40rpx;display: block;
-}
-.empty-text{text-align: center;font-size: 28rpx;color: #888;}
-.blue-font{
-    color: #576B95;font-size: 24rpx;text-align: center;margin-top: 12epx;
-}
+.empty-img{width:224rpx;height:224rpx;margin:0 auto 40rpx;display:block}.empty-text{text-align:center;font-size:28rpx;color:#888}.blue-font{color:#576b95;font-size:24rpx;text-align:center;margin-top:12epx}

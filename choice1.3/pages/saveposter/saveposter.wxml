@@ -4,8 +4,8 @@
 </view>
 <image src="../../images/saveposter_btn.png" class="save-btn" bindtap="savePhoto" />
 
-<import src="../../components/img-loader/img-loader.wxml"/>
-<template is="img-loader" data="{{ imgLoadList }}"></template>
+<!--<import src="../../components/img-loader/img-loader.wxml"/>-->
+<!--<template is="img-loader" data="{{ imgLoadList }}"></template>-->
 
 <!-- 授权弹窗 -->
 <dialog-wxml dialog-show="{{showDialog}}" open-type="{{openType}}" auth-info="{{authInfo}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>

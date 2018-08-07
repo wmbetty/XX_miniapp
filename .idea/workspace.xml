@@ -2,12 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a45c0a-9ae0-41cd-8f93-711c0d6e503d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choice1.3/.idea/choice2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choice1.3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choice1.3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choice1.3/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/dialog/dialog.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/components/dialog/dialog.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/empty/empty.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/components/empty/empty.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/img-loader/img-loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/img-loader/img-loader.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/share/share.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/share/share.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/share/share.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/share/share.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/components/tabBar/tabBar.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/components/tabBar/tabBar.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/add_bigIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/add_bigIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/avatarDefault.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/avatarDefault.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/boy_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/boy_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/close.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/comm_owner.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/comm_owner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/comment0.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/comment0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/comment1.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/comment1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/comment2.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/comment2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/comment_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/comment_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/d_more.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/d_more.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/dele_img_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/dele_img_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/dele_tag.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/dele_tag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/empty_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/empty_img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/feedback_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/feedback_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/girl_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/girl_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/gohome1.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/gohome1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/gold_coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/gold_coin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/good1.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/good1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/good2.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/good2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/grey_gold.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/grey_gold.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/hexie.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/hexie.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/hot_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/hot_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/img_act_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/img_act_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/img_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/img_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/invite_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/invite_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/main.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/main.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/main_act.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/main_act.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/main_commicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/main_commicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/moment_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/moment_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/msg.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/msg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/msg_act.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/msg_act.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/my.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/my.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/my_act.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/my_act.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/my_bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/my_bg2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/noticeLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/noticeLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/notice_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/notice_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/posterArrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/posterArrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/posterBg.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/posterBg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/posterBg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/posterBg2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/publish_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/publish_dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/right_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/right_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/save_qrcode_btn.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/save_qrcode_btn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/saveposter_btn.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/saveposter_btn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/score.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/score.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/share_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/share_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/teamLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/teamLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/text_act_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/text_act_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/text_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/text_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/thumb1.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/thumb1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/thumb2.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/thumb2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/up_act_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/up_act_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/up_icpn.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/up_icpn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/upload_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/upload_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/user_base.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/user_base.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/user_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/user_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/vote_circle.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/vote_circle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/vote_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/vote_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/images/wechat_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/images/wechat_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/commentmsg/commentmsg.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/commentmsg/commentmsg.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/details/details.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/details/details.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/feedback/feedback.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/feedback/feedback.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/choice1.3/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/index/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/main/main.json" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/main/main.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/main/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/main/main.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/messages/messages.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/messages/messages.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/mine/mine.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/mine/mine.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/notedetail/notedetail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/notedetail/notedetail.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/notedetail/notedetail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/notedetail/notedetail.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/otherDetails/otherDetails.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/otherDetails/otherDetails.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/others/others.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/others/others.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.js" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/sysnotice/sysnotice.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/sysnotice/sysnotice.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/usercenter/usercenter.js" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/usercenter/usercenter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choice1.3/pages/votemsg/votemsg.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/pages/votemsg/votemsg.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/choice1.3/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/choice1.3/project.config.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,7 +101,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,6 +116,15 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choice1.3/pages/index/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="238" column="24" lean-forward="true" selection-start-line="238" selection-start-column="24" selection-end-line="238" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="details.wxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.wxml">
           <provider selected="true" editor-type-id="text-editor" />
@@ -43,10 +132,42 @@
       </file>
       <file leaf-file-name="details.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="784" column="3" selection-start-line="784" selection-start-column="3" selection-end-line="784" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choice1.3/app.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saveposter.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.json">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
+      <file leaf-file-name="saveposter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2926">
+              <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>onshow</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,6 +176,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/choice1.3/pages/scroll/scroll.wxml" />
+        <option value="$PROJECT_DIR$/choice1.3/pages/scroll/scroll.wxss" />
+        <option value="$PROJECT_DIR$/choice1.3/pages/scroll/scroll.js" />
+        <option value="$PROJECT_DIR$/choice1.3/app.json" />
+        <option value="$PROJECT_DIR$/choice1.3/pages/details/details.js" />
       </list>
     </option>
   </component>
@@ -96,6 +222,33 @@
               <item name="XX_miniapp" type="462c0819:PsiDirectoryNode" />
               <item name="choice1.3" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="XX_miniapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XX_miniapp" type="462c0819:PsiDirectoryNode" />
+              <item name="choice1.3" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XX_miniapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XX_miniapp" type="462c0819:PsiDirectoryNode" />
+              <item name="choice1.3" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="details" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XX_miniapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XX_miniapp" type="462c0819:PsiDirectoryNode" />
+              <item name="choice1.3" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XX_miniapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XX_miniapp" type="462c0819:PsiDirectoryNode" />
+              <item name="choice1.3" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="saveposter" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -109,7 +262,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -133,33 +286,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533260899719</updated>
-      <workItem from="1533260903888" duration="243000" />
+      <workItem from="1533260903888" duration="1465000" />
+      <workItem from="1533536197953" duration="67000" />
+      <workItem from="1533607293564" duration="2208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243000" />
+    <option name="totallyTimeSpent" value="3740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496464" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496464" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3299712" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +340,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3454">
+          <caret line="157" column="8" selection-start-line="157" selection-start-column="2" selection-end-line="157" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5742">
+          <caret line="261" column="8" selection-start-line="261" selection-start-column="2" selection-end-line="261" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/commonFunction.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.wxml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/commonFunction.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.wxml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/saveposter/saveposter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2926">
+          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/scroll/scroll.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/scroll/scroll.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/scroll/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2420">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="238" column="24" lean-forward="true" selection-start-line="238" selection-start-column="24" selection-end-line="238" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choice1.3/pages/details/details.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="784" column="3" selection-start-line="784" selection-start-column="3" selection-end-line="784" selection-end-column="3" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

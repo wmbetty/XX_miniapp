@@ -502,22 +502,23 @@ Page({
     let rightImgTemp = that.data.rightImgTemp;
     let token = that.data.token;
     let isPublish = that.data.isPublish;
+    let shareApi = backApi.shareApi+token;
 
     if (txtActive) { //上传文字
       if (that.data.titleText === '点击输入标题' && that.data.leftText === '' && that.data.rightText === '') {
-        let wxShowToast = Api.wxShowToast('请填写基本内容', 'none', 2000);
+        Api.wxShowToast('请填写基本内容', 'none', 2000);
         return false;
       }
       if (that.data.titleText === '' || that.data.titleText === '点击输入标题') {
-        let wxShowToast = Api.wxShowToast('请填写标题', 'none', 2000);
+        Api.wxShowToast('请填写标题', 'none', 2000);
         return false;
       }
       if (that.data.leftText === '') {
-        let wxShowToast = Api.wxShowToast('请填写左选项', 'none', 2000);
+        Api.wxShowToast('请填写左选项', 'none', 2000);
         return false;
       }
       if (that.data.rightText === '') {
-        let wxShowToast = Api.wxShowToast('请填写右选项', 'none', 2000);
+        Api.wxShowToast('请填写右选项', 'none', 2000);
         return false;
       }
 
@@ -570,16 +571,6 @@ Page({
             }, 2000)
           }
           if (status === 201) {
-            let shareApi = backApi.shareApi+token;
-            let postData = {
-              type: 'friend',
-              qid: res.data.data.id
-            };
-            Api.wxRequest(shareApi,'POST',postData,(res)=>{
-              if (res.data.status*1===201) {
-                that.setData({shareFriImg:res.data.data.url})
-              }
-            });
             publishedPoint = res.data.data.member.points;
             wx.hideLoading();
             if (publishedPoint===myPoint) {
@@ -608,7 +599,18 @@ Page({
                   isShare: true,
                   btnDis: false
                 });
-              }, 2000)
+              }, 2000);
+              setTimeout(()=>{
+                let postData = {
+                  type: 'friend',
+                  qid: res.data.data.id
+                };
+                Api.wxRequest(shareApi,'POST',postData,(res)=>{
+                  if (res.data.status*1===201) {
+                    that.setData({shareFriImg:res.data.data.url})
+                  }
+                });
+              },2100)
             } else {
               setTimeout(()=> {
                 that.setData({
@@ -628,7 +630,7 @@ Page({
                   showRightNum: false
                 });
 
-              }, 300)
+              }, 300);
               // 2s后消失
               setTimeout(() => {
                 that.setData({
@@ -637,7 +639,18 @@ Page({
                   isShare: true,
                   btnDis: false
                 });
-              }, 2000)
+              }, 2000);
+              setTimeout(()=>{
+                let postData = {
+                  type: 'friend',
+                  qid: res.data.data.id
+                };
+                Api.wxRequest(shareApi,'POST',postData,(res)=>{
+                  if (res.data.status*1===201) {
+                    that.setData({shareFriImg:res.data.data.url})
+                  }
+                });
+              },2100)
             }
           }
         })
@@ -696,20 +709,20 @@ Page({
                   isShare: true,
                   btnDis: false
                 });
-              }, 2000)
+              }, 2000);
+              setTimeout(()=>{
+                let postData = {
+                  type: 'friend',
+                  qid: res.data.data.id
+                };
+                Api.wxRequest(shareApi,'POST',postData,(res)=>{
+                  if (res.data.status*1===201) {
+                    that.setData({shareFriImg:res.data.data.url})
+                  }
+                });
+              },2100)
             }
             if (status === 201) {
-              let shareApi = backApi.shareApi+token;
-              let postData = {
-                type: 'friend',
-                qid: res.data.data.id
-              };
-              Api.wxRequest(shareApi,'POST',postData,(res)=>{
-                // console.log(res.data.data.url,'friends');
-                if (res.data.status*1===201) {
-                  that.setData({shareFriImg:res.data.data.url})
-                }
-              });
               publishedPoint = res.data.data.member.points;
               wx.hideLoading();
               that.setData({showClickBtn: false});
@@ -729,7 +742,18 @@ Page({
                     isShare: true,
                     btnDis: false
                   });
-                }, 2000)
+                }, 2000);
+                setTimeout(()=>{
+                  let postData = {
+                    type: 'friend',
+                    qid: res.data.data.id
+                  };
+                  Api.wxRequest(shareApi,'POST',postData,(res)=>{
+                    if (res.data.status*1===201) {
+                      that.setData({shareFriImg:res.data.data.url})
+                    }
+                  });
+                },2100)
               } else {
                 setTimeout(()=> {
                   that.setData({
@@ -748,7 +772,18 @@ Page({
                     isShare: true,
                     btnDis: false
                   });
-                }, 2000)
+                }, 2000);
+                setTimeout(()=>{
+                  let postData = {
+                    type: 'friend',
+                    qid: res.data.data.id
+                  };
+                  Api.wxRequest(shareApi,'POST',postData,(res)=>{
+                    if (res.data.status*1===201) {
+                      that.setData({shareFriImg:res.data.data.url})
+                    }
+                  });
+                },2100)
               }
             }
             if (status === 444) {
@@ -830,7 +865,9 @@ Page({
     that.setData({
       isShare: false,
       hasUserInfo: true,
-      showClickBtn: false
+      showClickBtn: false,
+      showTextarea: false,
+      titleText: '点击输入标题'
     });
     wx.navigateTo({
       url: `/pages/saveposter/saveposter?qid=${qid}&token=${token}`
@@ -943,17 +980,17 @@ Page({
   },
   // 统计中英文字节数
   strlen(str) {
-  var len = 0;
-  for (var i=0; i<str.length; i++) {
-    let c = str.charCodeAt(i);
-    //单字节加1
-    if ((c >= 0x0001 && c <= 0x007e) || (0xff60<=c && c<=0xff9f)) {
-      len = len+1;
+    var len = 0;
+    for (var i=0; i<str.length; i++) {
+      let c = str.charCodeAt(i);
+      //单字节加1
+      if ((c >= 0x0001 && c <= 0x007e) || (0xff60<=c && c<=0xff9f)) {
+        len = len+1;
+      }
+      else {
+        len = len+2;
+      }
     }
-    else {
-      len = len+2;
-    }
+    return len;
   }
-  return len;
-}
 });
