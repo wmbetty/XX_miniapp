@@ -1,0 +1,83 @@
+<import src="../../components/tabBar/tabBar.wxml"/>
+
+<view class="page" wx:if="{{showPage}}">
+    <view class="banner-container">
+        <swiper class="banner-swiper" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+            <block wx:for="{{bannerList}}" wx:key="key">
+                <swiper-item class="banner-item">
+                    <image src="{{item.img_url}}" data-link="{{item.link_url}}" class="slide-image" bindtap="bannerGo" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- <view class="category-container">
+        <view class="flex-space-cont category-f1">
+            <view wx:for="{{categoryList}}" wx:if="{{index<3}}" wx:key="key"  class="cate-s-item" hover-class="list-hover" data-item="{{item}}" bindtap="goCateDetail">
+                <image src="{{item.icon_url}}" class="category-icon" />
+                <view>{{item.name}}</view>
+            </view>
+        </view>
+        <view class="flex-space-cont category-f2">
+            <view class="category-f2-cont category-f2-left">
+                <view class="flex-space-cont">
+                    <view class="cate-s-item" wx:for="{{categoryList}}" wx:if="{{index>2 && index<5}}" wx:key="key" data-item="{{item}}" hover-class="list-hover" bindtap="goCateDetail">
+                        <image src="{{item.icon_url}}" class="category-icon" />
+                        <view>{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="flex-space-cont category-f2-f2">
+                    <view class="cate-s-item" hover-class="list-hover" wx:for="{{categoryList}}" wx:if="{{index>4}}" wx:key="key" data-item="{{item}}" bindtap="goCateDetail">
+                        <image src="{{item.icon_url}}" class="category-icon" />
+                        <view>{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="cate-s-item category-f2-cont" hover-class="list-hover" bindtap="goRank">
+                <image class="rank-big-icon" src="../../images/rank.png"/>
+                <view>进榜单</view>
+                <view>做网红</view>
+            </view>
+        </view>
+    </view> -->
+    <view class="new-cate-container" wx:if="{{categoryList.length>0}}">
+      <view class="new-cate-group">
+        <view class="new-cate-item cate-item-botom" wx:for="{{categoryList}}" wx:if="{{index<4}}" wx:key="key" data-item="{{item}}" bindtap="goCateDetail">
+          <image src="{{item.icon_url}}" class="new-cate-icon" mode="aspectFill" />
+          <view>{{item.name}}</view>
+        </view>
+      </view>
+      <view class="new-cate-group">
+        <view class="new-cate-item" wx:for="{{categoryList}}" wx:if="{{index>3}}" wx:key="key" data-index="{{index}}" data-item="{{item}}" bindtap="goCateDetail">
+          <image src="{{index===7?'../../images/rank.png':item.icon_url}}" class="new-cate-icon" mode="aspectFill" />
+          <view>{{index===7?'积分榜':item.name}}</view>
+        </view>
+        <!-- <view class="new-cate-item" bindtap="goRank">
+          <image src="../../images/rank.png" class="new-cate-icon" />
+          <view>积分榜</view>
+        </view> -->
+      </view>
+    </view>
+    <view class="topic-container">
+        <view class="topic-head">话题精选</view>
+        <view class="topic-list-group" wx:if="{{showContent}}">
+            <view class="topic-list-item" style="background: url('{{item.bg_url}}') no-repeat;background-size: 100% 100%;" wx:for="{{topicList}}" wx:key="key" data-item="{{item}}"  bindtap="gotoTopic">
+                <view class="topic-info-cont">
+                    <view class="topic-title">{{item.title}}</view>
+                    <view class="flex-space-cont topic-list-botom">
+                        <view>#{{item.category_name}}</view>
+                        <view class="flex-space-cont hot-cont">
+                            <view>{{item.hots}}</view>
+                            <image src="../../images/white_hot.png" class="hot-icon" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="nomore-text" wx:if="{{noList}}">选象，让选择简单一点</view>
+            <view wx:if="{{topicList.length===0}}" class="tab-content-empty">
+                <empty-wxml empty-info="暂无话题数据"></empty-wxml>
+            </view>
+        </view>
+    </view>
+</view>
+<dialog-wxml catchtouchmove="ture" dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>
+<template is="tabBar" data="{{tabBar:bindData.tabBar,msgCount,voteUnreadCount,baseRedDot,commentTotal}}"/>

@@ -1,0 +1,56 @@
+<import src="../../components/tabBar/tabBar.wxml"/>
+<view>
+    <view class="mine-head">
+        <view class="mine-banner">
+            <view class="nums-box">
+                <image src="../../images/grey_gold.png" class="gold-coin" />
+                <view class="msg-box">{{userInfo.points || 0}}</view>
+            </view>
+            <image class="my-avatar" src="{{userInfo.avatar || '../../images/avatarDefault.png'}}" />
+            <image src="../../images/my_bg2.png" class="my-bg"/>
+        </view>
+    </view>
+    <view class="mine-infos">
+        <view class="my-name">{{userInfo.nickname || '无名氏'}}</view>
+        <image wx:if="{{userInfo.gender*1===1}}" src="../../images/boy_icon.png" class="my-gender"/>
+        <image wx:if="{{userInfo.gender*1===2}}" src="../../images/girl_icon.png" class="my-gender"/>
+    </view>
+    <view class="tab-container">
+        <view class="tab-head">
+            <view class="tab-head-item my-publish-item">
+                <view>发起({{totalCount}})</view>
+            </view>
+        </view>
+        <view class="tab-content" wx:if="{{showContent}}">
+            <view wx:if="{{myPublish.length}}">
+                <view>
+                    <view class="tab-list-item" bindtap="gotoDetail" wx:for="{{myPublish}}" data-id="{{item.id}}" data-mid="{{item.mid*1}}" wx:key="index">
+                        <view class="item-title">{{item.question}}</view>
+                        <view class="item-datas">
+                            <view class="percent-cont-box">
+                                <text class="left-pg-text">{{item.choose1_per}}%</text>
+                                <view class="percent-box">
+                                    <view class="left-progress" style="width:{{item.choose1_per?item.choose1_per:50}}%;"></view>
+                                    <view class="right-progress" style="width:{{item.choose2_per?item.choose2_per:50}}%;"></view>
+                                </view>
+                                <text class="right-pg-text">{{item.choose2_per}}%</text>
+                            </view>
+                            <view class="hot-cont-box">
+                                <image src="../../images/hot_icon.png" class="hot-icon" />
+                                <view>{{item.hots}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{nomorePublish}}">— 选象 让选择简单点 —</view>
+            </view>
+            <view wx:else class="empty-container">
+                <empty-wxml empty-info="懒人还没发过内容"></empty-wxml>
+            </view>
+
+        </view>
+    </view>
+</view>
+
+<!-- <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/> -->
+

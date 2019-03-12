@@ -1,0 +1,12 @@
+<view class="page-head">建议反馈</view>
+<view class="advice-container">
+    <textarea class="advice-cont" bindinput="putAdvice" placeholder-class="placeholder" value="{{contVal}}" placeholder="有任何产品建议或反馈，请给选小象留言哦～" maxlength="200"/>
+    <view class="text-num-box">
+        <text>{{restNum}}</text>
+        <text>{{textNum}}/</text>
+    </view>
+</view>
+<view class="mobile-box">
+    <input class="mobile-put" type="number" bindinput="putMobile"  maxlength="11" placeholder="留下手机号码，方便小象联系你哟～" placeholder-class="placeholder" />
+</view>
+<button class="{{isSubmit?'submit-btn submit-btn-act':'submit-btn'}}" disabled="{{submitDis}}" bindtap="submitAdvice">提交</button>

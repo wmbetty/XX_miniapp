@@ -1,0 +1,8 @@
+
+<view class="main-box">
+    <image class="poster-img" src="{{imagePath}}"></image>
+</view>
+<image src="../../images/saveposter_btn.png" class="save-btn" bindtap="savePhoto" />
+
+<!-- 授权弹窗 -->
+<dialog-wxml dialog-show="{{showDialog}}" open-type="{{openType}}" auth-info="{{authInfo}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>

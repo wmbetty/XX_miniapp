@@ -1,0 +1,41 @@
+.nineGrid{
+    width:600rpx;height:640rpx;margin:130rpx auto 0;padding:30rpx 40rpx 10rpx;position: relative;
+}
+.bg-img{position: absolute;left: 0;top: 0;width: 100%;height: 100%}
+.row{
+    /*height: 100rpx;*/
+    display: flex;margin-top: 20rpx;
+}
+.row-item{
+    margin-right: 12rpx;height: 180rpx;text-align: center;position: relative;width: 200rpx;
+}
+.wrapper {
+    width: 100%;height: 100%;margin: 0;background: #fff;border-radius: 10rpx;overflow: hidden;
+}
+image {
+    width: 100%;height: 100%;display: block;
+}
+
+.mask {
+    position: absolute;top: 0;left: 0;
+    width: 100%;height: 100%;opacity: 0.5;
+    background-color: #000;display: none;
+}
+.active{background: #FBE14C;border-radius: 10rpx;}
+.active .mask{
+    display: block;
+}
+.row .row-item:first-child{margin-left: 12rpx;}
+.page{
+    background: linear-gradient(to bottom, #FF996B, #E74C49);
+    overflow: hidden;
+}
+.orange{background: #FFC600;font-size: 46rpx;color: #E64340;border-radius: 10rpx;}
+.yellow{background: #FBE14C;width: 170rpx;height: 160rpx;margin: 10rpx auto;overflow: hidden}
+.reward-icon{
+    width:76rpx;height:76rpx;margin:26rpx auto  16rpx;
+}
+.reward-text{font-size: 28rpx;color: #666}
+/*.marg-right-12{margin-right: 12rpx;}*/
+/*.row-item:first-child{margin-left: 10rpx;}*/
+/*.row-item:last-child{margin-bottom: 10rpx;}*/

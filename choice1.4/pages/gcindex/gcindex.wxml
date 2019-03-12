@@ -1,0 +1,104 @@
+<!--pages/test/test.wxml-->
+<import src="../../components/tabBar/tabBar.wxml"/>
+
+<swiper class="card-container" vertical="{{vertical}}" current="{{cardIdx}}" style="height:{{viewHeight-50}}px;" bindchange="cardChange">
+  <block wx:for="{{questionList}}" wx:key="index">
+    <swiper-item>
+      <view class="card-item" style="height:{{viewHeight>680?(viewHeight*0.8):(viewHeight*0.78)}}px;">
+        <view class="card-head">
+          <view class="u-info">
+            <image class="u-avatar" src="{{(item.member&&item.member.avatar)?item.member.avatar:'../../images/avatarDefault.png'}}" data-mid="{{item.mid*1}}" catchtap="gotoOthers" />
+            <view class="u-name" data-mid="{{item.mid*1}}" catchtap="gotoOthers">{{(item.member&&item.member.nickname)?item.member.nickname:'无名氏'}}</view>
+            <image class="u-gender" src="{{item.member.gender*1===1?'../../images/boy_icon.png':'../../images/girl_icon.png'}}" />
+          </view>
+          <view class="head-right-cont">
+            <view class="comment-cont" data-id="{{item.id}}" data-mid="{{item.member.id}}" catchtap="gotoDetails">
+              <image class="share-icon" src="../../images/main_commicon.png" />
+              <text class="total-comment" wx:if="{{item.total_comment*1>0}}">{{item.total_comment*1>99?'99+':item.total_comment}}</text>
+            </view>
+            <image class="share-icon" src="../../images/share_icon.png" data-question="{{item}}" catchtap="goShare" />
+          </view>
+        </view>
+        <view class="card-title" style="height:{{viewHeight>680?viewHeight*0.3:130}}px;" data-id="{{item.id}}" data-mid="{{item.member.id}}" catchtap="gotoDetails">{{item.question}}</view>
+        <view class="card-hot">
+          <image class="hot-icon" src="../../images/hot_icon.png" />
+          <view class="hot-text">{{item.hots}}</view>
+        </view>
+        <!-- 文字选项 -->
+        <view class="card-options" wx:if="{{item.type*1===1}}">
+          <view class="option-item"  data-index="{{index}}" data-direct="left" catchtap="gotoVote">
+            <view>{{item.option1}}</view>
+            <view class="opton-mask" wx:if="{{item.showMask}}">
+              <view class="{{item.choose_left?'percent-item red-num':'percent-item'}}">
+                <text class="bigger-num show-number">{{item.choose1_per}}</text>
+                <text class="small-num show-number">%</text>
+              </view>
+            </view>
+          </view>
+          <view class="option-item"  data-index="{{index}}" data-direct="right" catchtap="gotoVote">
+            <view>{{item.option2}}</view>
+            <view class="opton-mask" wx:if="{{item.showMask}}">
+              <view class="{{item.choose_right?'percent-item red-num':'percent-item'}}">
+                <text class="bigger-num show-number">{{item.choose2_per}}</text>
+                <text class="small-num show-number">%</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 图片选项 -->
+        <view class="card-img-options" wx:if="{{item.type*1===2}}">
+          <view class="option-img-item" data-index="{{index}}" data-direct="left" catchtap="gotoVote">
+            <image class="{{item.type*1===2 && item.option1_check_status*1===3?'option-img disabled-img':'option-img'}}" src="{{item.option1}}" mode="aspectFill" />
+            <view class="opton-mask" wx:if="{{item.showMask}}">
+              <view class="{{item.choose_left?'img-percent-item red-num':'img-percent-item'}}">
+                <text class="bigger-num show-number">{{item.choose1_per}}</text>
+                <text class="small-num show-number">%</text>
+              </view>
+            </view>
+            <image wx:if="{{item.type*1===2 && item.option1_check_status*1===3}}" class="mask-img" src="../../images/hexie.png" />
+          </view>
+          <view class="option-img-item" data-index="{{index}}" data-direct="right" catchtap="gotoVote">
+            <image class="{{item.type*1===2 && item.option2_check_status*1===3?'option-img disabled-img':'option-img'}}" src="{{item.option2}}" mode="aspectFill" />
+            <view class="opton-mask" wx:if="{{item.showMask}}">
+              <view class="{{item.choose_right?'img-percent-item red-num':'img-percent-item'}}">
+                <text class="bigger-num show-number">{{item.choose2_per}}</text>
+                <text class="small-num show-number">%</text>
+              </view>
+            </view>
+            <image wx:if="{{item.type*1===2 && item.option2_check_status*1===3}}" class="mask-img" src="../../images/hexie.png" />
+          </view>
+        </view>
+
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 点赞效果 -->
+<view wx:if="{{showThumb}}" class="{{noShowThumb?'voted-thumb-box no-show-thumb':'voted-thumb-box'}}">
+    <image src="../../images/thumb2.png" class="thumb2" />
+    <image src="../../images/vote_circle.png" class="vote-circle" />
+</view>
+
+<view class="share-mask" wx:if="{{showShare}}">
+  <view class="{{isSlidedown?'share-btn-container slide-down':'share-btn-container slide-up'}}">
+      <view class="wechat-container" wx:if="{{showShare}}">
+          <button class="wechat-item-box" open-type="share" hover-stop-propagation="true" catchtap="shareToFriends">
+              <image src="../../images/wechat_icon.png" class="wechat-icon"/>
+              <view class="wechat-text">微信好友分享</view>
+          </button>
+          <view wx:if="{{showShare}}" class="wechat-item-box" hover-stop-propagation="true" catchtap="shareToMoment">
+              <image src="../../images/moment_icon.png" class="wechat-icon moment-icon"/>
+              <view class="wechat-text">生成海报</view>
+          </view>
+      </view>
+      <view class="cancel-btn" catchtap="cancelShare">取消</view>
+  </view>
+</view>
+
+<text class="up-icon no-active" style="top:{{viewHeight-88}}px;"></text>
+
+<dialog-wxml dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog" open-type="{{openType}}" auth-info="{{authInfo}}"></dialog-wxml>
+
+<template is="tabBar" data="{{tabBar:bindData.tabBar,msgCount,voteUnreadCount,baseRedDot,commentTotal}}" />

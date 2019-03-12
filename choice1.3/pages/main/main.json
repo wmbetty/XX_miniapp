@@ -1,8 +1,0 @@
-{
-    "navigationBarBackgroundColor": "#E64340",
-    "navigationBarTitleText": "选象",
-    "usingComponents": {
-        "dialog-wxml": "../../components/dialog/dialog",
-        "empty-wxml": "../../components/empty/empty"
-    }
-}

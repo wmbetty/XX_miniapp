@@ -1,0 +1,35 @@
+<!--pages/applist/applist.wxml-->
+<!--pages/applist/applist.wxml-->
+<view>
+  <view>
+    <view class="cont-title">精品推荐</view>
+    <view class="r-list-group">
+      <view class="r-list-item" wx:for="{{list}}" wx:key="index" data-item="{{item}}" bindtouchstart="openApp">
+        <view class="list-lt-side">
+          <image src="{{item.logo}}" class="app-logo"></image>
+          <view>
+            <view class="r-list-infos">
+              <view class="app-name">{{item.name}}</view>
+              <view class="app-nums">{{item.people}}</view>
+              <image src="../../images/hot_icon2.png" class="hot-icon"></image>
+            </view>
+            <view class="app-infos">{{item.describe}}</view>
+          </view>
+        </view>
+        <view class="open-btn">开始</view>
+        <!-- <navigator class="open-btn" target="miniProgram" open-type="navigate" app-id="" path="" extra-data="">开始</navigator> -->
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="user-dialog-mask" wx:if="{{dialogShow}}" catchtouchmove="ture">
+    <view class="user-dialog-content">
+        <view class="user-dialog-title">是否免费体验"{{appname}}"</view>
+        <view class="user-dialog-foot">
+            <view class="user-dialog-btn" catchtap="cancelDialog">取消</view>
+            <!-- <button class="user-dialog-btn user-dialog-confirm" open-type="{{openType}}" bindtap="confirmDialog">查看</button> release  trial-->
+            <navigator class="user-dialog-btn user-dialog-confirm" target="miniProgram" open-type="navigate" app-id="{{appid}}" version="release" extra-data="" bindtap="playApp">玩一下</navigator>
+        </view>
+    </view>
+</view>

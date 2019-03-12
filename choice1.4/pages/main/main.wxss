@@ -1,0 +1,47 @@
+page{background: #F5F6F8;}
+.page{padding-bottom: 130rpx;}
+.banner-container{
+    width: 100%;height: 240rpx;margin-bottom: 30rpx;
+}
+.banner-swiper{width: 100%;height: 100%;}
+swiper-item{width: 100%;height: 100%;}
+.slide-image{width: 700rpx;height: 240rpx;margin: 0 auto;border-radius: 10rpx;display: block;background: #f1f1f1;}
+.flex-space-cont{display: flex;justify-content: space-between;}
+.category-container{width: 700rpx;height: auto;margin: 0 auto;}
+.cate-s-item{background: #fff;color: #666;font-size: 28rpx;
+    width: 220rpx;height: 180rpx;border-radius: 10rpx;
+    box-shadow: 0 5px 5px -1px rgba(0,0,0,0.1);text-align: center;}
+.category-f2{margin-top: 20rpx;}
+.category-f2-f2{margin-top: 20rpx;}
+.category-f2-cont{width: 220rpx;height: 380rpx;}
+.category-f2-left{width: 460rpx;}
+.category-icon{width: 76rpx;height: 76rpx;margin: 26rpx auto 0;}
+.rank-big-icon{width: 156rpx;height: 200rpx;margin: 30rpx auto 26rpx;}
+.topic-container{width: 700rpx;margin: 0 auto;}
+.topic-head{color: #343434;font-size: 36rpx;padding: 30rpx 0 20rpx 10rpx;}
+.topic-list-item{
+    width: 700rpx;min-height: 180rpx;color: #fff;position: relative;
+    margin-bottom: 12rpx;background: rgba(0,0,0,.5);word-break: break-all;border-radius: 10rpx;
+  }
+.topic-info-cont{
+  /* padding: 20rpx 20rpx 0 40rpx; */
+  position: absolute;left: 0;top:0;border-radius: 10rpx;
+  width: 100%;height: 100%;background: rgba(0, 0, 0, 0.25);
+}
+.topic-title{font-size: 48rpx;margin-bottom: 30rpx;margin-top: 20rpx;margin-left: 40rpx;}
+.topic-list-botom{font-size: 28rpx;padding: 0 20rpx 0 40rpx;}
+.list-hover{background:#ededed}
+.hot-cont{align-items: center;}
+.hot-icon{width: 22rpx;height: 30rpx;margin-left: 12rpx;}
+.tab-content-empty{padding-top:80rpx;margin-bottom:140rpx}
+.nomore-text{color:#c7c7c7;font-size:24rpx;text-align:center;padding:20rpx 0}
+.new-cate-container{
+  padding: 30rpx 0 28rpx;background: #fff;color: #666;font-size: 24rpx;
+}
+.new-cate-group{display: flex;justify-content: space-between;}
+.new-cate-icon{
+  display: block;width: 70rpx;height: 70rpx;
+  margin: 0 auto 14rpx;
+}
+.new-cate-item{text-align: center;width: 25%;}
+.cate-item-botom{margin-bottom: 40rpx;}

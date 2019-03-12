@@ -1,0 +1,199 @@
+<view>
+    <view class="banner-cont">
+        <image src="{{topicDetail.img_url}}" />
+    </view>
+    <view class="ques-tab-contanier">
+        <view class="{{fixedTabHead?'flex-space-cont ques-tab-head tab-head-fixed':'flex-space-cont ques-tab-head'}}">
+            <view class="tab-head-item" data-type="1" bindtap="changeTab">
+                <view class="{{type*1===1?'tab-active':''}}">热门问题</view>
+                <view wx:if="{{type*1===1}}" class="black-line"></view>
+            </view>
+            <view class="tab-head-item" data-type="2" bindtap="changeTab">
+                <view class="{{type*1===2?'tab-active':''}}">最新问题</view>
+                <view wx:if="{{type*1===2}}" class="black-line"></view>
+            </view>
+        </view>
+
+        <view class="ques-tab-content" wx:if="{{showContent}}">
+            <view class="ques-list-group" hidden="{{type*1===2}}">
+                <view class="ques-list-item" wx:for="{{list1}}" wx:key="key">
+                    <view class="flex-space-cont list-item-head">
+                        <view class="head-left">
+                            <image src="{{item.member.avatar || '../../images/avatarDefault.png'}}" data-mid="{{item.mid}}" bindtap="gotoOther" class="m-avatar"></image>
+                            <view class="u-nickname" data-mid="{{item.mid}}" bindtap="gotoOther">{{item.member.nickname || '无名氏'}}</view>
+                            <view wx:if="{{item.member&&item.member.gender}}" class="{{item.member.gender*1===1?'gender-box gender-boy':'gender-box gender-girl'}}"></view>
+                        </view>
+                        <view class="head-right">
+                            <view class="comment-box" data-qid="{{item.id}}" bindtap="gotoDetail">
+                                <image src="../../images/topic_commicon.png" class="comm-icon"></image>
+                                <view>{{item.total_comment}}</view>
+                            </view>
+                            <view class="hot-box">
+                                <view class="hot-icon"></view>
+                                <view>{{item.hots}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="list-item-title" data-qid="{{item.id}}" bindtap="gotoDetail">{{item.question}}</view>
+                    <view class="flex-space-cont list-item-percent" wx:if="{{item.is_vote*1 !== 0}}">
+                        <view class="voter-left-box" wx:if="{{item.is_vote*1 === 1}}">
+                            <image class="voter-img" src="{{localUser.avatar || '../../images/avatarDefault.png'}}"></image>
+                            <image class="vote-down-arrow" src="../../images/posterArrow.png"></image>
+                        </view>
+                        <view class="voter-right-box" wx:if="{{item.is_vote*1 === 2}}">
+                            <image class="voter-img" src="{{localUser.avatar || '../../images/avatarDefault.png'}}"></image>
+                            <image class="vote-down-arrow" src="../../images/posterArrow.png"></image>
+                        </view>
+                        <view class="percent-item green-font">{{item.choose1_per}}%</view>
+                        <view class="percent-item purple-font">{{item.choose2_per}}%</view>
+                    </view>
+                    <view class="flex-space-cont list-item-options">
+                        <view class="options-container" bindtap="gotoVote" data-direct="left" data-index="{{index}}" data-item="{{item}}">
+                            <view wx:if="{{item.type*1===1}}" class="{{item.is_vote*1 !== 0 ?'options-item green-bg bg-opacity':'options-item green-bg'}}">{{item.option1}}</view>
+                            <image class="{{item.type*1===2 && item.option1_check_status*1===3?'options-item-img delay-img':'options-item-img'}}" wx:if="{{item.type*1===2}}" src="{{item.option1}}" mode="aspectFill" />
+                            <image wx:if="{{item.type*1===2 && item.option1_check_status*1===3}}" src="../../images/hexie.png" class="hexie-img" />
+                            <view wx:if="{{item.showMask}}" class="vote-mask">
+                                <view class="{{item.choose_left?'vote-selected':''}}"><text class="show-number">{{item.choose1_per}}%</text></view>
+                            </view>
+                        </view>
+                        <view class="options-container" bindtap="gotoVote" data-direct="right" data-index="{{index}}" data-item="{{item}}">
+                            <view wx:if="{{item.type*1===1}}" class="{{item.is_vote*1 !== 0 ?'options-item purple-bg bg-opacity':'options-item purple-bg'}}">{{item.option2}}</view>
+                            <image class="{{item.type*1===2 && item.option2_check_status*1===3?'options-item-img delay-img':'options-item-img'}}" wx:if="{{item.type*1===2}}" src="{{item.option2}}" mode="aspectFill" />
+                            <image wx:if="{{item.type*1===2 && item.option2_check_status*1===3}}" src="../../images/hexie.png" class="hexie-img" />
+                            <view wx:if="{{item.showMask}}" class="vote-mask">
+                                <view class="{{item.choose_right?'vote-selected':''}}"><text class="show-number">{{item.choose2_per}}%</text></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{showBotomText1}}">选象，让选择简单一点</view>
+                <view wx:if="{{list1.length===0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无热门问题"></empty-wxml>
+                </view>
+            </view>
+            <view class="ques-list-group" hidden="{{type*1===1}}">
+                <!--newQues-->
+                <view class="ques-list-item" wx:if="{{item}}">
+                    <view class="flex-space-cont list-item-head">
+                        <view class="head-left">
+                            <image src="{{item.member.avatar || '../../images/avatarDefault.png'}}" data-mid="{{item.mid}}" data-mid="{{item.mid}}" bindtap="gotoOther" class="m-avatar"></image>
+                            <view class="u-nickname" data-mid="{{item.mid}}" bindtap="gotoOther" >{{item.member.nickname || '无名氏'}}</view>
+                            <view wx:if="{{item.member&&item.member.gender}}" class="{{item.member.gender*1===1?'gender-box gender-boy':'gender-box gender-girl'}}"></view>
+                        </view>
+                        <view class="head-right">
+                            <view class="comment-box" data-qid="{{item.id}}" bindtap="gotoDetail">
+                                <image src="../../images/topic_commicon.png" class="comm-icon"></image>
+                                <view>{{item.total_comment}}</view>
+                            </view>
+                            <view class="hot-box">
+                                <view class="hot-icon"></view>
+                                <view>{{item.hots}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="list-item-title" data-qid="{{item.id}}" bindtap="gotoDetail">{{item.question}}</view>
+                    <view class="flex-space-cont list-item-percent" wx:if="{{item.is_vote*1 !== 0}}">
+                        <view class="voter-left-box" wx:if="{{item.is_vote*1 === 1}}">
+                            <image class="voter-img" src="{{localUser.avatar || '../../images/avatarDefault.png'}}"></image>
+                            <image class="vote-down-arrow" src="../../images/posterArrow.png"></image>
+                        </view>
+                        <view class="voter-right-box" wx:if="{{item.is_vote*1 === 2}}">
+                            <image class="voter-img" src="{{localUser.avatar || '../../images/avatarDefault.png'}}"></image>
+                            <image class="vote-down-arrow" src="../../images/posterArrow.png"></image>
+                        </view>
+                        <view class="percent-item green-font">{{item.choose1_per}}%</view>
+                        <view class="percent-item purple-font">{{item.choose2_per}}%</view>
+                    </view>
+                    <view class="flex-space-cont list-item-options">
+                        <view class="options-container" bindtap="gotoVote" data-direct="left" data-index="{{index}}" data-item="{{item}}">
+                            <view wx:if="{{item.type*1===1}}" class="{{item.is_vote*1 !== 0 ?'options-item green-bg bg-opacity':'options-item green-bg'}}">{{item.option1}}</view>
+                            <image class="{{item.type*1===2 && item.option1_check_status*1===3?'options-item-img delay-img':'options-item-img'}}" wx:if="{{item.type*1===2}}" src="{{item.option1}}" />
+                            <image wx:if="{{item.type*1===2 && item.option1_check_status*1===3}}" src="../../images/hexie.png" class="hexie-img" />
+                            <view wx:if="{{item.showMask}}" class="vote-mask">
+                                <view class="{{item.choose_left?'vote-selected':''}}"><text class="show-number">{{item.choose1_per}}%</text></view>
+                            </view>
+                        </view>
+                        <view class="options-container" bindtap="gotoVote" data-direct="right" data-index="{{index}}" data-item="{{item}}">
+                            <view wx:if="{{item.type*1===1}}" class="{{item.is_vote*1 !== 0 ?'options-item purple-bg bg-opacity':'options-item purple-bg'}}">{{item.option2}}</view>
+                            <image class="{{item.type*1===2 && item.option2_check_status*1===3?'options-item-img delay-img':'options-item-img'}}" wx:if="{{item.type*1===2}}" src="{{item.option2}}" />
+                            <image wx:if="{{item.type*1===2 && item.option2_check_status*1===3}}" src="../../images/hexie.png" class="hexie-img" />
+                            <view wx:if="{{item.showMask}}" class="vote-mask">
+                                <view class="{{item.choose_right?'vote-selected':''}}"><text class="show-number">{{item.choose2_per}}%</text></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <view class="ques-list-item" wx:for="{{list2}}" wx:key="key">
+                    <view class="flex-space-cont list-item-head">
+                        <view class="head-left">
+                            <image src="{{item.member.avatar || '../../images/avatarDefault.png'}}" data-mid="{{item.mid}}" data-mid="{{item.mid}}" bindtap="gotoOther" class="m-avatar"></image>
+                            <view class="u-nickname" data-mid="{{item.mid}}" bindtap="gotoOther" >{{item.member.nickname || '无名氏'}}</view>
+                            <view wx:if="{{item.member&&item.member.gender}}" class="{{item.member.gender*1===1?'gender-box gender-boy':'gender-box gender-girl'}}"></view>
+                        </view>
+                        <view class="head-right">
+                            <view class="comment-box" data-qid="{{item.id}}" bindtap="gotoDetail">
+                                <image src="../../images/topic_commicon.png" class="comm-icon"></image>
+                                <view>{{item.total_comment}}</view>
+                            </view>
+                            <view class="hot-box">
+                                <view class="hot-icon"></view>
+                                <view>{{item.hots}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="list-item-title" data-qid="{{item.id}}" bindtap="gotoDetail">{{item.question}}</view>
+                    <view class="flex-space-cont list-item-percent" wx:if="{{item.is_vote*1 !== 0}}">
+                        <view class="voter-left-box" wx:if="{{item.is_vote*1 === 1}}">
+                            <image class="voter-img" src="{{localUser.avatar || '../../images/avatarDefault.png'}}"></image>
+                            <image class="vote-down-arrow" src="../../images/posterArrow.png"></image>
+                        </view>
+                        <view class="voter-right-box" wx:if="{{item.is_vote*1 === 2}}">
+                            <image class="voter-img" src="{{localUser.avatar || '../../images/avatarDefault.png'}}"></image>
+                            <image class="vote-down-arrow" src="../../images/posterArrow.png"></image>
+                        </view>
+                        <view class="percent-item green-font">{{item.choose1_per}}%</view>
+                        <view class="percent-item purple-font">{{item.choose2_per}}%</view>
+                    </view>
+                    <view class="flex-space-cont list-item-options">
+                        <view class="options-container" bindtap="gotoVote" data-direct="left" data-index="{{index}}" data-item="{{item}}">
+                            <view wx:if="{{item.type*1===1}}" class="{{item.is_vote*1 !== 0 ?'options-item green-bg bg-opacity':'options-item green-bg'}}">{{item.option1}}</view>
+                            <image class="{{item.type*1===2 && item.option1_check_status*1===3?'options-item-img delay-img':'options-item-img'}}" wx:if="{{item.type*1===2}}" src="{{item.option1}}" mode="aspectFill" />
+                            <image wx:if="{{item.type*1===2 && item.option1_check_status*1===3}}" src="../../images/hexie.png" class="hexie-img" />
+                            <view wx:if="{{item.showMask}}" class="vote-mask">
+                                <view class="{{item.choose_left?'vote-selected':''}}"><text class="show-number">{{item.choose1_per}}%</text></view>
+                            </view>
+                        </view>
+                        <view class="options-container" bindtap="gotoVote" data-direct="right" data-index="{{index}}" data-item="{{item}}">
+                            <view wx:if="{{item.type*1===1}}" class="{{item.is_vote*1 !== 0 ?'options-item purple-bg bg-opacity':'options-item purple-bg'}}">{{item.option2}}</view>
+                            <image class="{{item.type*1===2 && item.option2_check_status*1===3?'options-item-img delay-img':'options-item-img'}}" wx:if="{{item.type*1===2}}" src="{{item.option2}}" mode="aspectFill" />
+                            <image wx:if="{{item.type*1===2 && item.option2_check_status*1===3}}" src="../../images/hexie.png" class="hexie-img" />
+                            <view wx:if="{{item.showMask}}" class="vote-mask">
+                                <view class="{{item.choose_right?'vote-selected':''}}"><text class="show-number">{{item.choose2_per}}%</text></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{showBotomText2}}">选象，让选择简单一点</view>
+                <view wx:if="{{list2.length===0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无最新问题"></empty-wxml>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 点赞效果 -->
+<view wx:if="{{showThumb}}" class="voted-thumb-box">
+    <image src="../../images/thumb2.png" class="thumb2" />
+    <image src="../../images/vote_circle.png" class="vote-circle" />
+</view>
+
+<!-- <view class="fixed-botom-container">
+    <button open-type="share" class="topic-botom-btn share-btn-botom left-btn">
+        <image src="../../images/topic_sharebtn.png"></image>
+    </button>
+    <image src="../../images/topic_askbtn.png" class="topic-botom-btn right-btn" data-tid="{{topicId}}" data-cid="{{topicDetail.category_id}}" data-title="{{pageTitle}}" bindtap="gotoSendTopic"></image>
+</view> -->
+
+<dialog-wxml dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>

@@ -1,0 +1,15 @@
+<view>
+    <view class="img-comtainer">
+        <image class="activity-img" mode="widthFix" src="{{activity.img_url}}"></image>
+    </view>
+    <view class="nomore-text">选象，让选择简单一点</view>
+</view>
+
+<view class="fixed-botom-container">
+    <button open-type="share" class="topic-botom-btn share-btn-botom left-btn">
+        <image src="../../images/topic_sharebtn.png"></image>
+    </button>
+    <image src="../../images/topic_joinbtn.png" class="topic-botom-btn right-btn" data-title="{{pageTitle}}" bindtap="gotoJoin"></image>
+</view>
+
+<dialog-wxml dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>

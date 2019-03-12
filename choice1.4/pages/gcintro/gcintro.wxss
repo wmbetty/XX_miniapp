@@ -1,0 +1,10 @@
+page{padding-bottom: 60rpx;}
+.intro1{margin: 80rpx 0;}
+.text-center{text-align: center}
+.intro-view{margin: 0 0 180rpx;}
+.color-34{color: #343434}
+.h1{font-size: 60rpx;}
+.color-88{color: #888;}
+.h4{font-size: 40rpx;}
+.intro-img{width: 280rpx;height: 280rpx;margin: 0 auto;}
+.text-botom{margin-bottom: 10rpx;}

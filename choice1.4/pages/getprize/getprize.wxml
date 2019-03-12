@@ -1,0 +1,46 @@
+
+<view class="page" style="height: {{viewHeight}}px;">
+    <view class="nineGrid" wx:if="{{showContent}}">
+        <image src="../../images/reward_bg.png" class="bg-img"></image>
+        <view class="row">
+            <view wx:for="{{prizeList}}" wx:if="{{index<=2}}" wx:key="key" class="{{pindex===index?'row-item active':'row-item'}}">
+                <view class="{{pindex===index?'wrapper active':'wrapper'}}">
+                    <image class="reward-icon" src="{{item.img_url}}"></image>
+                    <view class="reward-text">{{item.name}}</view>
+                </view>
+                <!--<view class="mask"></view>-->
+            </view>
+        </view>
+        <view class="row">
+            <view wx:for="{{prizeList}}" wx:if="{{index===3}}" wx:key="key" class="{{pindex===3?'row-item active':'row-item'}}">
+                <view class="{{pindex===3?'wrapper active':'wrapper'}}">
+                    <image class="reward-icon" src="{{item.img_url}}"></image>
+                    <view class="reward-text">{{item.name}}</view>
+                </view>
+                <!--<view class="mask"></view>-->
+            </view>
+            <view class="row-item orange" bindtap="startLottery">
+                <view class="yellow">
+                    <view style="margin-top: 20rpx;">立即</view>
+                    <view>抽奖</view>
+                </view>
+            </view>
+            <view wx:for="{{prizeList}}" wx:if="{{index===4}}" wx:key="key" class="{{pindex===4?'row-item active':'row-item'}}">
+                <view class="{{pindex===4?'wrapper active':'wrapper'}}">
+                    <image class="reward-icon" src="{{item.img_url}}"></image>
+                    <view class="reward-text">{{item.name}}</view>
+                </view>
+                <!--<view class="mask"></view>-->
+            </view>
+        </view>
+        <view class="row">
+            <view wx:for="{{prizeList}}" wx:if="{{index>=5}}" wx:key="index" class="{{pindex===index?'row-item active':'row-item'}}">
+                <view class="{{pindex===index?'wrapper active':'wrapper'}}">
+                    <image class="reward-icon" src="{{item.img_url}}"></image>
+                    <view class="reward-text">{{item.name}}</view>
+                </view>
+                <!--<view class="mask"></view>-->
+            </view>
+        </view>
+    </view>
+</view>

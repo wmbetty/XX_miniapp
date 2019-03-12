@@ -1,0 +1,165 @@
+<view>
+    <view class="banner-cont" hidden="{{fixedTabHead}}">
+        <image src="../../images/rank_banner.png" />
+    </view>
+    <view>
+        <view class="{{fixedTabHead?'flex-space-cont tab-head tab-head-fixed':'flex-space-cont tab-head'}}">
+            <view class="tab-head-item" data-title="isWeek" bindtap="changeTab">
+                <view class="{{isWeek?'tab-black-text':'tab-text'}}">{{isWeekUp?'上周':'本周'}}</view>
+                <view hidden="{{!isWeek}}" class="{{type*1===1?'rank-arrow':'rank-arrow rank-arrow-up'}}"></view>
+            </view>
+            <view class="tab-head-item" data-title="isMonth" bindtap="changeTab">
+                <view class="{{isMonth?'tab-black-text':'tab-text'}}">{{isMonthUp?'上月':'本月'}}</view>
+                <view hidden="{{!isMonth}}" class="{{type*1===3?'rank-arrow':'rank-arrow rank-arrow-up'}}"></view>
+            </view>
+            <view class="tab-head-item" data-title="isAllRank" bindtap="changeTab">
+                <view class="{{isAllRank?'tab-black-text':'border-fff'}}">总榜</view>
+            </view>
+        </view>
+    </view>
+    <view class="tab-cont" hidden="{{!showContent}}">
+        <!--周排行榜-->
+        <view hidden="{{!isWeek}}">
+            <view hidden="{{type*1!==1}}" class="rank-list-group">
+                <view hidden="{{list1.length===0}}" class="rank-list-item" wx:for="{{list1}}" wx:key="key" wx:if="{{index<100}}">
+                    <view>
+                        <image wx:if="{{index===0}}" src="../../images/medal1.png" class="rank-medal" />
+                        <image wx:if="{{index===1}}" src="../../images/medal2.png" class="rank-medal" />
+                        <image wx:if="{{index===2}}" src="../../images/medal3.png" class="rank-medal" />
+                        <view wx:if="{{index>2 && index <10}}" class="rank-medal one-num">{{index+1}}</view>
+                        <view wx:if="{{index>=10 && index <99}}" class="rank-medal two-num">{{index+1}}</view>
+                        <view wx:if="{{index===99}}" class="rank-medal three-num">{{index+1}}</view>
+                    </view>
+                    <view>
+                        <view class="ques-user-info">
+                            <image class="user-avatar" data-mid="{{item.mid}}" bindtap="gotoOthers" src="{{item.avatar || '../../images/avatarDefault.png'}}" />
+                            <view>{{item.nickname || '无名氏'}}</view>
+                            <image wx:if="{{item.mid*1===myid*1}}" src="../../images/my_questag.png" class="my-ques-tag"></image>
+                        </view>
+                        <view class="ques-cont" data-id="{{item.id}}" bindtap="goQuesDetails">
+                            <view class="ques-title">{{item.question}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{noList1 || list1.length>=100 || (list1.length<=4 && list1.length>0)}}">选象，让选择简单一点</view>
+                <view hidden="{{list1.length!==0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无本周排行"></empty-wxml>
+                </view>
+            </view>
+            <view hidden="{{type*1!==2}}" class="rank-list-group">
+                <view hidden="{{list2.length===0}}" class="rank-list-item" wx:for="{{list2}}" wx:key="key" wx:if="{{index<100}}">
+                    <view>
+                        <image wx:if="{{index===0}}" src="../../images/medal1.png" class="rank-medal" />
+                        <image wx:if="{{index===1}}" src="../../images/medal2.png" class="rank-medal" />
+                        <image wx:if="{{index===2}}" src="../../images/medal3.png" class="rank-medal" />
+                        <view wx:if="{{index>2 && index <10}}" class="rank-medal one-num">{{index+1}}</view>
+                        <view wx:if="{{index>=10 && index <99}}" class="rank-medal two-num">{{index+1}}</view>
+                        <view wx:if="{{index===99}}" class="rank-medal three-num">{{index+1}}</view>
+                    </view>
+                    <view>
+                        <view class="ques-user-info">
+                            <image class="user-avatar" data-mid="{{item.mid}}" bindtap="gotoOthers" src="{{item.avatar || '../../images/avatarDefault.png'}}" />
+                            <view>{{item.nickname || '无名氏'}}</view>
+                            <image wx:if="{{item.mid*1===myid*1}}" src="../../images/my_questag.png" class="my-ques-tag"></image>
+                        </view>
+                        <view class="ques-cont" data-id="{{item.id}}" bindtap="goQuesDetails">
+                            <view class="ques-title">{{item.question}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{noList2 || list2.length>=100 || (list2.length<=4 && list2.length>0)}}">选象，让选择简单一点</view>
+                <view hidden="{{list2.length!==0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无上周排行"></empty-wxml>
+                </view>
+            </view>
+        </view>
+
+        <!--月排行榜-->
+        <view hidden="{{!isMonth}}">
+            <view hidden="{{type*1!==3}}" class="rank-list-group">
+                <view hidden="{{list3.length===0}}" class="rank-list-item" wx:for="{{list3}}" wx:key="key" wx:if="{{index<100}}">
+                    <view>
+                        <image wx:if="{{index===0}}" src="../../images/medal1.png" class="rank-medal" />
+                        <image wx:if="{{index===1}}" src="../../images/medal2.png" class="rank-medal" />
+                        <image wx:if="{{index===2}}" src="../../images/medal3.png" class="rank-medal" />
+                        <view wx:if="{{index>2 && index <10}}" class="rank-medal one-num">{{index+1}}</view>
+                        <view wx:if="{{index>=10 && index <99}}" class="rank-medal two-num">{{index+1}}</view>
+                        <view wx:if="{{index===99}}" class="rank-medal three-num">{{index+1}}</view>
+                    </view>
+                    <view>
+                        <view class="ques-user-info">
+                            <image class="user-avatar" data-mid="{{item.mid}}" bindtap="gotoOthers" src="{{item.avatar || '../../images/avatarDefault.png'}}" />
+                            <view>{{item.nickname || '无名氏'}}</view>
+                            <image wx:if="{{item.mid*1===myid*1}}" src="../../images/my_questag.png" class="my-ques-tag"></image>
+                        </view>
+                        <view class="ques-cont" data-id="{{item.id}}" bindtap="goQuesDetails">
+                            <view class="ques-title">{{item.question || '问题为空'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{noList3 || list3.length>=100 || (list3.length<=4 && list3.length>0)}}">选象，让选择简单一点</view>
+                <view hidden="{{list3.length!==0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无本月数据"></empty-wxml>
+                </view>
+            </view>
+            <view hidden="{{type*1!==4}}" class="rank-list-group">
+                <view hidden="{{list4.length===0}}" class="rank-list-item" wx:for="{{list4}}" wx:key="key" wx:if="{{index<100}}">
+                    <view>
+                        <image wx:if="{{index===0}}" src="../../images/medal1.png" class="rank-medal" />
+                        <image wx:if="{{index===1}}" src="../../images/medal2.png" class="rank-medal" />
+                        <image wx:if="{{index===2}}" src="../../images/medal3.png" class="rank-medal" />
+                        <view wx:if="{{index>2 && index <10}}" class="rank-medal one-num">{{index+1}}</view>
+                        <view wx:if="{{index>=10 && index <99}}" class="rank-medal two-num">{{index+1}}</view>
+                        <view wx:if="{{index===99}}" class="rank-medal three-num">{{index+1}}</view>
+                    </view>
+                    <view>
+                        <view class="ques-user-info">
+                            <image class="user-avatar" data-mid="{{item.mid}}" bindtap="gotoOthers" src="{{item.avatar || '../../images/avatarDefault.png'}}" />
+                            <view>{{item.nickname || '无名氏'}}</view>
+                            <image wx:if="{{item.mid*1===myid*1}}" src="../../images/my_questag.png" class="my-ques-tag"></image>
+                        </view>
+                        <view class="ques-cont" data-id="{{item.id}}" bindtap="goQuesDetails">
+                            <view class="ques-title">{{item.question}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{noList4 || list4.length>=100 || (list4.length<=4 && list4.length>0)}}">选象，让选择简单一点</view>
+                <view hidden="{{list4.length!==0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无上月数据"></empty-wxml>
+                </view>
+            </view>
+        </view>
+
+        <!--总排行榜-->
+        <view wx:if="{{isAllRank}}">
+            <view class="rank-list-group">
+                <view hidden="{{list5.length===0}}" class="rank-list-item" wx:for="{{list5}}" wx:key="key" wx:if="{{index<100}}">
+                    <view>
+                        <image wx:if="{{index===0}}" src="../../images/medal1.png" class="rank-medal" />
+                        <image wx:if="{{index===1}}" src="../../images/medal2.png" class="rank-medal" />
+                        <image wx:if="{{index===2}}" src="../../images/medal3.png" class="rank-medal" />
+                        <view wx:if="{{index>2 && index <10}}" class="rank-medal one-num">{{index+1}}</view>
+                        <view wx:if="{{index>=10 && index <99}}" class="rank-medal two-num">{{index+1}}</view>
+                        <view wx:if="{{index===99}}" class="rank-medal three-num">{{index+1}}</view>
+                    </view>
+                    <view>
+                        <view class="ques-user-info">
+                            <image class="user-avatar" data-mid="{{item.mid}}" bindtap="gotoOthers" src="{{item.avatar || '../../images/avatarDefault.png'}}" />
+                            <view>{{item.nickname || '无名氏'}}</view>
+                            <image wx:if="{{item.mid*1===myid*1}}" src="../../images/my_questag.png" class="my-ques-tag"></image>
+                        </view>
+                        <view class="ques-cont" data-id="{{item.id}}" bindtap="goQuesDetails">
+                            <view class="ques-title">{{item.question}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="nomore-text" wx:if="{{noList5 || list5.length>=100 || (list5.length<=4 && list5.length>0)}}">选象，让选择简单一点</view>
+                <view hidden="{{list5.length!==0}}" class="tab-content-empty">
+                    <empty-wxml empty-info="暂无总排行榜数据"></empty-wxml>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>
+<dialog-wxml dialog-show="{{showDialog}}" bind:cancelDialog="cancelDialog" bind:confirmDialog="confirmDialog"></dialog-wxml>

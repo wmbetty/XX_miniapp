@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "empty-wxml": "../../components/empty/empty",
+    "dialog-wxml": "../../components/dialog/dialog"
+  }
+}

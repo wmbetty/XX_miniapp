@@ -1,0 +1,16 @@
+page{position: relative;background: #F5F6F8;padding-bottom: 120rpx}
+.img-comtainer{width: 100%;min-height: 200rpx;overflow-x: hidden;overflow-y: auto;
+    display: flex;align-items: center;justify-content: center;
+}
+.activity-img{display: block;width: 100%;min-height: 1200rpx;overflow-y: auto}
+.fixed-botom-container{
+    width: 100%;height: 100rpx;background: rgba(255,255,255,.9);border-top: 1px solid #f1f1f1;
+    position: fixed;left: 0;bottom: 0;display: flex;align-items: center;justify-content: space-between;
+}
+.topic-botom-btn{width: 330rpx;height: 72rpx;}
+.left-btn{margin-left: 30rpx;}
+.right-btn{margin-right: 30rpx;}
+button::after{border: none;}
+.share-btn-botom{background: #62559D;border-radius: 0;padding: 0;}
+.topic-botom-btn image{display: block;width: 330rpx;height: 72rpx;}
+.nomore-text{color:#c7c7c7;font-size:24rpx;text-align:center;padding:20rpx 0}

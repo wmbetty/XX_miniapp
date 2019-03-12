@@ -1,0 +1,33 @@
+<view>
+    <view class="text-center intro1">
+        <view class="color-34 h1 text-botom">“选象”</view>
+        <view class="color-88 h4">给选择困难用户提供帮助的小程序</view>
+    </view>
+    <view class="text-center intro-view">
+        <image class="intro-img" src="../../images/intro1.png"></image>
+        <view class="text-botom">当你左右为难时</view>
+        <view class="text-botom">发布问题</view>
+        <view>众人帮你快速抉择靠谱选项</view>
+    </view>
+    <view class="text-center intro-view">
+        <image class="intro-img" src="../../images/intro2.png"></image>
+        <view class="text-botom">当你胸有成竹时</view>
+        <view>纠结用户因你的明智之选而得以脱困</view>
+    </view>
+    <view class="text-center intro-view">
+        <image class="intro-img" src="../../images/intro3.png"></image>
+        <view class="text-botom">人生无处不纠结</view>
+        <view class="text-botom">总有选象帮你解</view>
+        <view class="text-botom">投票不够</view>
+        <view>评论来解</view>
+    </view>
+    <view class="text-center intro-view">
+        <image class="intro-img" src="../../images/intro4.png"></image>
+        <view class="text-botom">做选择，上选象。</view>
+        <view class="text-botom">一次发布</view>
+        <view>网友、好友一起帮</view>
+    </view>
+    <view class="text-center">
+        <view class="color-88 h4">选象致力于让选择简单点</view>
+    </view>
+</view>

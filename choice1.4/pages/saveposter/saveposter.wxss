@@ -1,0 +1,12 @@
+page{
+    background: #E5E7ED;
+}
+.main-box{
+    width: 690rpx;height: 1000rpx;margin: 30rpx auto 30rpx;background: #fff;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+}
+.main-head{
+    width: 100%;height: 238rpx;
+}
+.save-btn{width: 360rpx;height: 120rpx;margin: 0 auto;display: block;}
+.poster-img{width: 100%;height: 100%;display: block;}

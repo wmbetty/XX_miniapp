@@ -1,0 +1,52 @@
+.icon {
+    width:42rpx;
+    height:42rpx
+}
+.tabBar {
+    width:100%;
+    position:fixed;
+    z-index:10;
+    bottom:0;
+    padding:10rpx;
+    margin-left:-4rpx;
+    display:flex;
+    justify-content:space-between;
+    background:#343434;
+    font-size:20rpx;
+    color:#888;
+    box-shadow:16rpx 16rpx 16rpx 16rpx rgba(0,0,0,0.7)
+}
+.tabBar-item {
+    float:left;
+    width:33.3%;
+    text-align:center;
+    overflow:hidden
+}
+.tabBar-item:nth-child(3) {
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+.tabBar-item:nth-child(3) image {
+    width:122rpx;
+    height:112rpx;
+    position:absolute;
+    left:50%;
+    margin-left:-68rpx;
+    bottom:18rpx
+}
+.tabBartext {
+    color:#e74c49
+}
+.my-msg-box {
+    position:relative
+}
+.my-msg-red-dot {
+    position:absolute;
+    top:0;
+    right:50rpx;
+    width:20rpx;
+    height:20rpx;
+    border-radius:50%;
+    background:#e74c49
+}

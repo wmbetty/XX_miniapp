@@ -1,0 +1,172 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx9fec8c5f7b92b271",
+	"projectname": "GC1.4",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 20,
+			"list": [
+				{
+					"id": -1,
+					"name": "广场",
+					"pathName": "pages/main/main",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "msg",
+					"pathName": "pages/messages/messages",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "vote",
+					"pathName": "pages/votemsg/votemsg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/details/details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "feed",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ndetail",
+					"pathName": "pages/notedetail/notedetail",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "gcindex",
+					"pathName": "pages/gcindex/gcindex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "other",
+					"pathName": "pages/others/others",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mtest",
+					"pathName": "pages/mtest/mtest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "input",
+					"pathName": "pages/input/input",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "poster",
+					"pathName": "pages/saveposter/saveposter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/rankboard/rankboard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "话题详情",
+					"pathName": "pages/topicques/topicques",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "介绍",
+					"pathName": "pages/gcintro/gcintro",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "奖",
+					"pathName": "pages/getprize/getprize",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "gif",
+					"pathName": "pages/gif/gif",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "applist",
+					"pathName": "pages/applist/applist",
+					"query": ""
+				},
+				{
+					"id": 20,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/gcindex/gcindex",
+					"query": ""
+				}
+			]
+		}
+	}
+}
